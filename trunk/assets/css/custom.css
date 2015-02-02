@@ -1,0 +1,89 @@
+body {
+    background-color:#dfded4;
+}
+
+/* Header styles starting here */
+#top-container {
+    width:100%;
+    margin:0;
+    padding:0;
+    height:100px;
+    background-color:#ca171b;
+}
+#red-line {
+    width:100%;
+    height:5px;
+    background-color:#ca171b;
+}
+#logo-area {
+    width:100%;
+    height:85px;
+    padding-top:5px;
+}
+#brown-line {
+    width:100%;
+    height:5px;
+    background-color:#432f21;
+}
+#logo {
+    background-image: url("../images/sablogo.png");
+    background-repeat: no-repeat;
+    background-position: left;
+    background-origin: content-box;
+    height:75px;
+}
+#login-area {
+    padding-top: 15px;
+    height:60px;
+    color: #dfded4;
+    text-align:right;
+}
+#login-area a {
+
+}
+#login-area a:link {
+    color: #dfded4;
+}
+#login-area a:visited {
+    color: #dfded4;
+}
+#login-area a:hover {
+    color: #432f21;
+}
+#login-area a:active {
+    color: #432f21;
+}
+p.logo-title {
+    padding-top: 15px;
+    padding-left: 80px;
+    color: #dfded4;
+}
+.lms-text {
+    font-size:22px;
+    font-weight: bold;
+    line-height: 90%;
+}
+.uni-text {
+    font-size:14px;
+    font-weight: normal;
+    line-height: 90%;
+}
+
+/* Header styles ends here */
+
+/* Login form styles starting here */
+
+#login-form {
+}
+
+/* Login form styles ends here */
+
+/* Notifications starts here */
+
+p.error {
+    border: 1px solid #990000;
+    background-color: #ffcccc;
+    color: #990000;
+}
+
+/* Notifications ends here */
