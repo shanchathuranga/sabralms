@@ -4,11 +4,13 @@ class Admin extends CI_Controller
 
 	public function index()
 	{
+
 	}
 	public function Student_Reg()
 	{
 		$data['main_content'] = "Student_Reg";
 		$this->load->view("layouts/main", $data);
+		
 	}
 	public function Lecturer_Reg()
 	{
