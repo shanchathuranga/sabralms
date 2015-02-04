@@ -22,5 +22,10 @@ class Admin extends CI_Controller
 		$data['main_content'] = "site_news";
 		$this->load->view("layouts/main", $data);
 	}
+	public function stu_reg()
+	{
+		$data['main_content'] = "stu_reg_form";
+		$this->load->view("layouts/main", $data);
+	}
 }
 ?>
