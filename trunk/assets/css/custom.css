@@ -87,3 +87,18 @@ p.error {
 }
 
 /* Notifications ends here */
+
+/*.menu {list-style-image: url(plus.gif);}*/
+.vert-menu-header {
+    list-style: none;
+}
+.vert-menu ul:first-child {
+    list-style: none;
+}
+.vert-submenu {
+    display: none;
+    list-style: none;
+}
+.vert-menu span {
+    cursor: pointer;
+}
