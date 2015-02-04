@@ -79,10 +79,4 @@ class User extends CI_Controller
 			$this->load->view("layouts/main", $data);
 		}
 	}
-	public function user_Reg()
-	{
-		$this->load->views('User_Registration');
-	}
-
-
 }
