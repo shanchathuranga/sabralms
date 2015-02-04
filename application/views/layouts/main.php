@@ -21,7 +21,7 @@
 					$display_name = $this->session->userdata('display_name');
 					if ( isset($display_name) && !empty($display_name) ) :
 				?>
-				<div id="login-area" class="grid_3">You are logged in as <?php echo $display_name; ?><br/>
+				<div id="login-area" class="grid_3">You are logged in as <b><?php echo $display_name; ?></b><br/>
 					<a href="<?php echo base_url(); ?>user/logout">Logout</a></div>
 				<?php else : ?>
 				<div id="login-area" class="grid_3">You are not logged in<br/><a href="<?php echo base_url(); ?>user/login">Login Here</a></div>
@@ -34,12 +34,12 @@
 	
 	<div class="container_12">
 		<?php $this->load->view($main_content); ?>
-	
-		<hr/>
-		
-		<footer>
-			<p><center><small>&COPY; Copyright 2015</small></center></p>
-		</footer>
 	</div>
+	
+	<br/>
+	<hr/>
+	<footer>
+		<p><center><small>&COPY; Copyright 2015</small></center></p>
+	</footer>
 </body>
 </html>
