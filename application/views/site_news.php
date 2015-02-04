@@ -1,19 +1,19 @@
-<div class="container">
-  <h2>Vertical (basic) form</h2>
-  <form role="form">
-    <div class="form-group">
-      <label for="email">Email:</label>
-      <input type="email" class="form-control" id="email" placeholder="Enter email">
-    </div>
-    <div class="form-group">
-      <label for="pwd">Password:</label>
-      <input type="password" class="form-control" id="pwd" placeholder="Enter password">
-    </div>
-    <div class="checkbox">
-      <label><input type="checkbox"> Remember me</label>
-    </div>
-    <button type="submit" class="btn btn-default">Submit</button>
-  </form>
+<div class="grid_3">
+	<div id="side-navigation">
+		<ul class="vert-menu">
+			<li class="vert-menu-header">Site News</li>
+			
+			
+				<ul><a href="<?php echo base_url(); ?>SiteNews/Add">add news</a></ul>
+				<ul><a href="<?php echo base_url(); ?>SiteNews/Delete">delete news</a></ul>
+				<ul><a href="<?php echo base_url(); ?>SiteNews/Update">update news</a></ul>
+			
+			</li>
+		</ul>
+	</div>
+</div>
+<div class="grid_9">
+ news
 </div>
 
 
