@@ -4,14 +4,14 @@
 			<li class="vert-menu-header">Navigation</li>
 			<li onclick="toggleMenuItem('vert-submenu-1')"><span>User Registration</span></li>
 			<ul id="vert-submenu-1" class="vert-submenu">
-				<li><a href="<?php echo base_url(); ?>admin/Student_Reg">Student Registration</a></li>
+				<li><a href="<?php echo base_url(); ?>admin/student_form">Student Registration</a></li>
 				<li><a href="<?php echo base_url(); ?>admin/Lecturer_Reg">Lecturer Registration</a></li>
 				<li><a href="<?php echo base_url(); ?>admin/Site_news">Site News</a></li>
 			</ul>
 			<li onclick="toggleMenuItem('vert-submenu-2')"><span>System Maintenence</span></li>
 			<ul id="vert-submenu-2" class="vert-submenu">
 				<li><a href="<?php echo base_url(); ?>admin/Student_Reg">Degree Program Registration</a></li>
-				<li><a href="<?php echo base_url(); ?>admin/Lecturer_Reg">Course Registration</a></li>
+				<li><a href="<?php echo base_url(); ?>admin/course_register">Course Registration</a></li>
 			</ul>
 		</ul>
 	</div>
