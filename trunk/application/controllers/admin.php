@@ -27,7 +27,10 @@ class Admin extends CI_Controller {
 	}
 
 	public function lecturer_register() {
-		// TODO
+		$this->load->model('lecturer_model');
+		$this->lecturer_model->insert_lecturer();
+
+		redirect(base_url() . 'admin/lecturer_form');
 	}
 
 	public function Site_news() {
@@ -49,17 +52,17 @@ class Admin extends CI_Controller {
 		redirect(base_url() . 'admin/course_form');
 	}
 
-	public function degree_regrister() {
+	public function degree_register() {
 		// Add data to the database
 		$this->load->model('degree_model');
-		$this->course_model->insert_degree();
+		$this->degree_model->insert_degree();
 
 		redirect(base_url() . 'admin/degree_form');
 	}
 
 	public function degree_form() {
 		//$this->load->model('degree_model');
-		$data['main_content'] = "course_register_form";
+		$data['main_content'] = "degree_register_form";
 		$this->load->view("layouts/main", $data);
 	}
 

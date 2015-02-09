@@ -2,17 +2,17 @@
 	&nbsp;
 </div>
 <div class="grid_9">
-	<form action="<?php echo base_url(); ?>admin/degree_form" method="post">
+	<h3>Degree Program Registration Form</h3>
+	<form action="<?php echo base_url(); ?>admin/degree_register" method="post">
 		<label for="">Code:</label>
 		<br/>
 		<input type="text" name="code">
 		<br/>
 		<label for="">Title:</label>
 		<br/>
-                <input type="text" name="title">
-                <br/>
+		<input type="text" name="title">
+		<br/>
 		<input type="submit" value="Register">
 		<br/>
 	</form>
 </div>
-
