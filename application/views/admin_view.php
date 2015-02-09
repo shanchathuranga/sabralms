@@ -5,7 +5,7 @@
 			<li onclick="toggleMenuItem('vert-submenu-1')"><span>User Registration</span></li>
 			<ul id="vert-submenu-1" class="vert-submenu">
 				<li><a href="<?php echo base_url(); ?>admin/student_form">Student Registration</a></li>
-				<li><a href="<?php echo base_url(); ?>admin/Lecturer_Reg">Lecturer Registration</a></li>
+				<li><a href="<?php echo base_url(); ?>admin/lecturer_form">Lecturer Registration</a></li>
 				<li><a href="<?php echo base_url(); ?>admin/Site_news">Site News</a></li>
 			</ul>
 			<li onclick="toggleMenuItem('vert-submenu-2')"><span>System Maintenence</span></li>
