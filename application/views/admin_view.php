@@ -12,6 +12,7 @@
 			<ul id="vert-submenu-2" class="vert-submenu">
 				<li><a href="<?php echo base_url(); ?>admin/degree_form">Degree Program Registration</a></li>
 				<li><a href="<?php echo base_url(); ?>admin/course_form">Course Registration</a></li>
+                                <li><a href="<?php echo base_url(); ?>admin/degree_course_form">Degree-Course Registration</a></li>
 			</ul>
 		</ul>
 	</div>

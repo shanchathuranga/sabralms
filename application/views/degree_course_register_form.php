@@ -2,7 +2,7 @@
 	&nbsp;
 </div>
 <div class="grid_9">
-	<form action="<?php echo base_url(); ?>admin/degree_course_form" method="post">
+	<form action="<?php echo base_url(); ?>admin/degree_crse_form" method="post">
 		<label for="">Degree:</label>
 		<br/>
 		<input type="text" name="degree">
