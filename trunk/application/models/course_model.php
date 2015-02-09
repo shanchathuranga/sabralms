@@ -8,9 +8,9 @@ class course_model extends CI_Model {
         
 
         $data = array(
-            'code' => $code,
+            'course_code' => $code,
             
-            'title' => $title
+            'course_title' => $title
         );
 
         $this->db->insert('course', $data);

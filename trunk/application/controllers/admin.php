@@ -30,7 +30,13 @@ class Admin extends CI_Controller {
         $this->load->view("layouts/main", $data);
     }
     
-     public function course_regrister() {
+    public function course_form() {
+        //$this->load->model('degree_model');
+        $data['main_content'] = "course_register_form";
+        $this->load->view("layouts/main", $data);
+    }
+      public function course_register() 
+    {
         // Add data to the database
         $this->load->model('course_model');
         $this->course_model->insert_course();
@@ -38,11 +44,23 @@ class Admin extends CI_Controller {
         redirect(base_url() . 'admin/course_form');
     }
     
-    public function course_form() {
+    
+    
+    
+     public function degree_regrister() {
+        // Add data to the database
         $this->load->model('degree_model');
+        $this->course_model->insert_degree();
+
+        redirect(base_url() . 'admin/degree_form');
+    }
+    
+    public function degree_form() {
+        //$this->load->model('degree_model');
         $data['main_content'] = "course_register_form";
         $this->load->view("layouts/main", $data);
     }
+    
     
 }
 
