@@ -66,4 +66,19 @@ class Admin extends CI_Controller {
 		$this->load->view("layouts/main", $data);
 	}
 
+	public function degreecourse_register() {
+		// Add data to the database
+		$this->load->model('degreecourse_model');
+		$this->degreecourse_model->insert_degreecourse();
+
+		redirect(base_url() . 'admin/degreecourse_form');
+	}
+
+	public function degreecourse_form() {
+		$this->load->model('degree_model');
+		$this->load->model('course_model');
+		
+		$data['main_content'] = "degree_course_register_form";
+		$this->load->view("layouts/main", $data);
+	}
 }
