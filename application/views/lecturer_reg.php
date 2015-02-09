@@ -1,6 +1,6 @@
 <div class="container">
   <h2>Lecturer Registration Form</h2>
-  <form action="form">
+  <form id="login-form" method="post" action="<?php echo base_url(); ?>user/InsertLecturer">
     First Name:		
 				<input type="text" name="FName" id="FName">
 			</br></br>
