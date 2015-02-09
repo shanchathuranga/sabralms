@@ -3,7 +3,8 @@
 class Admin extends CI_Controller {
 
 	public function index() {
-		
+		$data['main_content'] = "lecturer_view";
+		$this->load->view("layouts/main", $data);
 	}
 
 	public function student_form() {
@@ -63,5 +64,3 @@ class Admin extends CI_Controller {
 	}
 
 }
-
-?>
