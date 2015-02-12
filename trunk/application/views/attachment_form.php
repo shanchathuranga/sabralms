@@ -2,7 +2,7 @@
 	&nbsp;
 </div>
 <div class="grid_9">
-	<form action="<?php echo base_url(); ?>admin/add_attachment" method="post">
+	<!--<form action="<?php echo base_url(); ?>admin/add_attachment" method="POST"  enctype="multipart/form-data">
                 <label for="">Title:</label>
 		<br/>
 		<input type="text" name="title">
@@ -15,6 +15,13 @@
 		<br/>
 		<input type="text" name="add">
                 <br/>
+                
+                <label for="">Select File To Upload:</label>
+                <br />
+                <input type="file" name="userfile"  />
+                <br /><br />
+                <input type="submit" name="submit" value="Upload" class="btn btn-success" />
+                
                 <label for="">Year:</label>
                 <br/>
                 <select name="year">
@@ -25,7 +32,13 @@
                 </select>
                 <br/>
                 <br/>
-		<input type="submit" value="Register">
+		<input type="submit" name="submit" value="Upload" class="btn btn-success" />
 		<br/>
-	</form>
+	</form>-->
+    <form action="" method="POST" enctype="multipart/form-data" >
+    Select File To Upload:<br />
+    <input type="file" name="userfile"  />
+    <br /><br />
+    <input type="submit" name="submit" value="Upload" class="btn btn-success" />
+</form>
 </div>
