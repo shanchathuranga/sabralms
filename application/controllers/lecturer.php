@@ -9,6 +9,7 @@ class Lecturer extends CI_Controller
 	
 	public function home()
 	{
+		$this->load->model('courselecturer_model');
 		$data['main_content'] = "lecturer_view";
 		$this->load->view("layouts/main", $data);
 	}

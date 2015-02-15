@@ -22,5 +22,17 @@ class course_model extends CI_Model {
 		}
 		return FALSE;
 	}
+	
+	public function get_course_by_code($course_code)
+	{
+		$this->db->where('course_code', $course_code);
+		$result = $this->db->get('course');
+		
+		if ( $result->num_rows() == 1 )
+		{
+			return $result->row(0);
+		}
+		return FALSE;
+	}
 
 }
