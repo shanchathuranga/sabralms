@@ -4,11 +4,14 @@ class add_attachment_model extends CI_Model {
 
     public function insert_add_attachment() {
         $title = $this->input->post('title');
-        $path = $this->input->post('path');
-
+        $text = $this->input->post('text');
+        $year = $this->input->post('year');
+        $semester = $this->input->post('semester');
         $data = array(
             'title' => $title,
-            'path' => $path
+            'Text' => $text,
+            'Year' => $year,
+            'Semester' => $semester
       
         );
 

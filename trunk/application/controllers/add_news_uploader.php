@@ -1,7 +1,12 @@
 <?php
 
-class admin_upload extends CI_Controller 
+class admin_news_uploader extends CI_Controller 
 {
+    public function index()
+    {
+        $this->load->view('add_news_form');
+    }
+    
     public function __construct()
     {
         parent::__construct();
@@ -10,11 +15,8 @@ class admin_upload extends CI_Controller
         $this->load->helper('url');
     }
  
-    public function index()
-    {
-        $this->load->view('attachment_form');
-    }
     
+   
     
 }
 
