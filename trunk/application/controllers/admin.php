@@ -28,6 +28,7 @@ class Admin extends CI_Controller {
 	}
 	
 	public function lecturer_form() {
+		$this->load->model('course_model');
 		$data['main_content'] = "lecturer_register_form";
 		$this->load->view("layouts/main", $data);
 	}
