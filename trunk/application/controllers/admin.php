@@ -1,9 +1,15 @@
-<?php
+                                                                                                 <?php
 
 class Admin extends CI_Controller {
 
-	public function index() {
-		$data['main_content'] = "lecturer_view";
+	public function index() 
+	{
+		$this->home();
+	}
+	
+	public function home()
+	{
+		$data['main_content'] = "admin_view";
 		$this->load->view("layouts/main", $data);
 	}
 
