@@ -39,7 +39,7 @@
 				foreach ($course_list as $course)
 				{
 					echo '<ul><li>';
-					echo '<a href="#">'.$course->course_title.'</a>';
+					echo '<a href="'.base_url().'lecturer/update_course_view/'.urlencode(base64_encode($course->course_code)).'">'.$course->course_title.'</a>';
 					echo '</li></ul>';
 				}
 			}
@@ -57,7 +57,7 @@
 				foreach ($course_list as $course)
 				{
 					echo '<ul><li>';
-					echo '<a href="#">'.$course->course_title.'</a>';
+					echo '<a href="'.base_url().'lecturer/update_course_view/'.urlencode(base64_encode($course->course_code)).'">'.$course->course_title.'</a>';
 					echo '</li></ul>';
 				}
 			}
@@ -79,7 +79,7 @@
 				foreach ($course_list as $course)
 				{
 					echo '<ul><li>';
-					echo '<a href="#">'.$course->course_title.'</a>';
+					echo '<a href="'.base_url().'lecturer/update_course_view/'.urlencode(base64_encode($course->course_code)).'">'.$course->course_title.'</a>';
 					echo '</li></ul>';
 				}
 			}
@@ -97,7 +97,7 @@
 				foreach ($course_list as $course)
 				{
 					echo '<ul><li>';
-					echo '<a href="#">'.$course->course_title.'</a>';
+					echo '<a href="'.base_url().'lecturer/update_course_view/'.urlencode(base64_encode($course->course_code)).'">'.$course->course_title.'</a>';
 					echo '</li></ul>';
 				}
 			}
@@ -119,7 +119,7 @@
 				foreach ($course_list as $course)
 				{
 					echo '<ul><li>';
-					echo '<a href="#">'.$course->course_title.'</a>';
+					echo '<a href="'.base_url().'lecturer/update_course_view/'.urlencode(base64_encode($course->course_code)).'">'.$course->course_title.'</a>';
 					echo '</li></ul>';
 				}
 			}
@@ -137,7 +137,7 @@
 				foreach ($course_list as $course)
 				{
 					echo '<ul><li>';
-					echo '<a href="#">'.$course->course_title.'</a>';
+					echo '<a href="'.base_url().'lecturer/update_course_view/'.urlencode(base64_encode($course->course_code)).'">'.$course->course_title.'</a>';
 					echo '</li></ul>';
 				}
 			}
@@ -159,7 +159,7 @@
 				foreach ($course_list as $course)
 				{
 					echo '<ul><li>';
-					echo '<a href="#">'.$course->course_title.'</a>';
+					echo '<a href="'.base_url().'lecturer/update_course_view/'.urlencode(base64_encode($course->course_code)).'">'.$course->course_title.'</a>';
 					echo '</li></ul>';
 				}
 			}
@@ -177,7 +177,7 @@
 				foreach ($course_list as $course)
 				{
 					echo '<ul><li>';
-					echo '<a href="#">'.$course->course_title.'</a>';
+					echo '<a href="'.base_url().'lecturer/update_course_view/'.urlencode(base64_encode($course->course_code)).'">'.$course->course_title.'</a>';
 					echo '</li></ul>';
 				}
 			}
