@@ -36,7 +36,8 @@ class Admin extends CI_Controller {
 	public function lecturer_register() {
 		$this->load->model('lecturer_model');
 		$this->lecturer_model->insert_lecturer();
-
+		$this->load->model('courselecturer_model');
+		$this->courselecturer_model->insert_courselecturer();
 		redirect(base_url() . 'admin/lecturer_form');
 	}
 
