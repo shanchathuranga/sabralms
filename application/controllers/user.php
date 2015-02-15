@@ -51,24 +51,20 @@ class User extends CI_Controller
 				
 				$this->session->set_userdata($userData);
 				
-				if ($currentUserType->usertype_name == 'ADMIN')
+				switch ($currentUserType->usertype_name)
 				{
-					$data['main_content'] = "admin_view";
-					$this->load->view("layouts/main", $data);
-				}
-				else if ($currentUserType->usertype_name == 'LECTURER')
-				{
-					$data['main_content'] = "lecturer_view";
-					$this->load->view("layouts/main", $data);
-				}
-				else if ($currentUserType->usertype_name == 'STUDENT')
-				{
-					$data['main_content'] = "student_view";
-					$this->load->view("layouts/main", $data);
-				}
-				else
-				{
-					redirect(base_url());
+					case 'ADMIN':
+						redirect(base_url().'admin');
+						break;
+					case 'LECTURER':
+						redirect(base_url().'lecturer');
+						break;
+					case 'STUDENT':
+						redirect(base_url().'student');
+						break;
+					default:
+						redirect(base_url());
+						break;
 				}
 			}
 		}
