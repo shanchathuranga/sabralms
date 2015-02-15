@@ -48,7 +48,7 @@
 		</td>
 		</tr>
 		</table>
-		<input type="submit" value="Register" />
+		<input type="submit" value="Register" onclick="selectAllItems('selected_courses')"/>
 	</form>
 </div>
 

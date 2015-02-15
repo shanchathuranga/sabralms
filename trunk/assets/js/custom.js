@@ -69,3 +69,11 @@ function moveListBoxItem(tbFromName, tbToName)
         tbTo[ii] = no;
     }
 }
+
+function selectAllItems(listboxName)
+{
+    var lbox = document.getElementById(listboxName);
+    for(var i=0; i < lbox.options.length; i++){
+        lbox.options[i].selected = true;
+    }
+}
