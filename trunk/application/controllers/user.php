@@ -14,7 +14,7 @@ class User extends CI_Controller
 	
 	public function logout()
 	{
-		$this->session->unset_userdata('user_id');
+		$this->session->unset_userdata('user_reg_no');
 		$this->session->unset_userdata('username');
 		$this->session->unset_userdata('display_name');
 		$this->session->unset_userdata('usertype');
@@ -42,7 +42,7 @@ class User extends CI_Controller
 			else
 			{
 				$userData = array(
-					'user_id' => $currentUser->user_id,
+					'user_reg_no' => $currentUser->user_reg_no,
 					'username' => $currentUser->username,
 					'display_name' => $currentUser->display_name,
 					'usertype' => $currentUserType->usertype_name,
