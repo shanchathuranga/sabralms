@@ -10,13 +10,13 @@
 			</ul>
 			<li onclick="toggleMenuItem('vert-submenu-2')"><span>Assignment</span></li>
 			<ul id="vert-submenu-2" class="vert-submenu">
-				<li><a href="<?php echo base_url(); ?>admin/degree_form">Add Assignment</a></li>
+				<li><a href="<?php echo base_url(); ?>admin/add_assignment_form">Add Assignment</a></li>
 				<li><a href="<?php echo base_url(); ?>admin/course_form">Update Assignment</a></li>
                                 <li><a href="<?php echo base_url(); ?>admin/degree_course_form">Delete Assignment</a></li>
 			</ul>
                         <li onclick="toggleMenuItem('vert-submenu-3')"><span>Site News</span></li>
 			<ul id="vert-submenu-3" class="vert-submenu">
-				<li><a href="<?php echo base_url(); ?>admin/degree_form">Add News</a></li>
+				<li><a href="<?php echo base_url(); ?>admin/add_news_form">Add News</a></li>
 				<li><a href="<?php echo base_url(); ?>admin/course_form">Update News</a></li>
                                 <li><a href="<?php echo base_url(); ?>admin/degree_course_form">Delete News</a></li>
 			</ul>
