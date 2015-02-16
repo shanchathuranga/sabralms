@@ -22,7 +22,17 @@ class Lecturer_model extends CI_Model
         
         public function getAll()
 	{       //$this->load->result();
-		$query = $this->db->query("SELECT * FROM course_lecturer");
+		$query = $this->db->query("SELECT reg_no
+                                           FROM lecturer
+                                           RIGHT JOIN course_lecturer ON lecturer.reg_no=course_lecturer.lecturer_reg_no
+                                           UNION
+                                           SELECT course_code
+                                           FROM course
+                                           JOIN course_lecturer ON course.course_code=course_lecturer.lecturer_reg_no
+                                           UNION
+                                           SELECT course_code 
+                                           FROM topic
+                                           JOIN course_lecturer ON topic.course_code=course_lecturer.lecturer_reg_no");
 		return $query->result();
 	}
 }
