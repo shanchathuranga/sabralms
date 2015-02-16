@@ -33,6 +33,7 @@ class Lecturer extends CI_Controller
 	
 	public function add_new_topic()
 	{
+		$this->load->model('course_model');
 		$this->load->model('topic_model');
 		$this->topic_model->insert_topic();
 		
