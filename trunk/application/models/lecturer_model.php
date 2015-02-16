@@ -18,4 +18,11 @@ class Lecturer_model extends CI_Model
 
         $this->db->insert('lecturer', $data);
 	}
+        
+        
+        public function getAll()
+	{
+		$query = $this->db->query("SELECT * FROM caurse_lecturer");
+		return $query->result();
+	}
 }
