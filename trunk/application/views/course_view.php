@@ -28,10 +28,11 @@
 			echo '<br/>';
 			echo '<form action="'.base_url().'lecturer/upload_topic_attachement" method="post" enctype="multipart/form-data">'.
 				'<input type="hidden" value="'.$topic->topic_id.'" name="topic_id" />'.
-				'<input type="file" name="fileToUpload" id="fileToUpload" />'.
+				'<input type="file" name="userfile" size="20" />'.
 				'<input type="submit" value="Add Attachement" name="submit" />'.
 				'</form>';
 			echo '</p>';
+			break;
 		}
 		echo '<hr/>';
 	}
