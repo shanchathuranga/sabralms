@@ -22,10 +22,11 @@ class Lecturer extends CI_Controller
 		{
 			redirect(base_url().'lecturer');
 		}
-
+                $this->load->model("lecturer_model");
 		$data['main_content'] = "course_view";
 		$data['course_code'] = base64_decode(urldecode($course_code_encoded));
 		$this->load->view("layouts/main", $data);
+                
 	}
 
 	public function note_upload_view()
@@ -38,16 +39,12 @@ class Lecturer extends CI_Controller
 		
 	}
         
-        public function show()
+       /* public function show()
 	{
+                
 		$this->load->model("lecturer_model");
-		
-                //$this->lecturer_model->getAll();
-		
-		//$this->load->view('caurse_view', $data);
-                //$this->load->result();
                 $data['main_content'] = "course_view";
 		$this->load->view("layouts/main", $data);
-	}
+	}*/
 	
 }
