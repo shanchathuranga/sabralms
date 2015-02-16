@@ -1,21 +1,21 @@
-<div class="grid_3">
-    &nbsp;
-</div>
-<div class="grid_9">
+    
     <table width="400px" border="1">
         <thead>
-            <th>Code</th>
-            <th>Cost</th>
+            <th>Course code</th>
+            <th>lecturer reg no</th>
             
         </thead>
         <tbody>
-	<?php  foreach ($result as $row) { ?>
+	<?php  
+        //$this->lecturer_model->getAll();
+        $result=$this->lecurer_model->getAll();
+        foreach ($result as $row) { ?>
 	<tr>
-	<td><?= $row->caurse_code ?></td>
+	<td><?= $row->course_code ?></td>
 	<td><?= $row->lecturer_reg_no ?></td>
 	
 	</tr>
 	<?php } ?>
         </tbody>
     </table>
-</div>    
+   

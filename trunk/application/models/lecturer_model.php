@@ -21,8 +21,8 @@ class Lecturer_model extends CI_Model
         
         
         public function getAll()
-	{
-		$query = $this->db->query("SELECT * FROM caurse_lecturer");
+	{       //$this->load->result();
+		$query = $this->db->query("SELECT * FROM course_lecturer");
 		return $query->result();
 	}
 }
