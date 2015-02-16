@@ -42,6 +42,11 @@ class Lecturer extends CI_Controller
 		$this->load->view("layouts/main", $data);
 	}
 	
+	public function upload_topic_attachement()
+	{
+		
+	}
+
 	public function update_topic_view()
 	{
 		

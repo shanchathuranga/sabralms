@@ -26,7 +26,11 @@
 			echo '<br/>';
 			echo '<a href="'.base_url().'lecturer/update_topic_view">Update topic</a>';
 			echo '<br/>';
-			echo '<a href="#">Add new attachment</a>';
+			echo '<form action="'.base_url().'lecturer/upload_topic_attachement" method="post" enctype="multipart/form-data">'.
+				'<input type="hidden" value="'.$topic->topic_id.'" name="topic_id" />'.
+				'<input type="file" name="fileToUpload" id="fileToUpload" />'.
+				'<input type="submit" value="Add Attachement" name="submit" />'.
+				'</form>';
 			echo '</p>';
 		}
 		echo '<hr/>';
