@@ -24,7 +24,7 @@
 			echo '<br/>';
 			echo $topic->topic_description;
 			echo '<br/>';
-			echo '<a href="#">Update topic</a>';
+			echo '<a href="'.base_url().'lecturer/update_topic_view">Update topic</a>';
 			echo '<br/>';
 			echo '<a href="#">Add new attachment</a>';
 			echo '</p>';

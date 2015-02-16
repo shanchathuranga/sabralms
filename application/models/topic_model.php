@@ -19,6 +19,18 @@ class Topic_model extends CI_Model
 
 		$this->db->insert('topic', $data);
 	}
+	
+	public function update_topic($topic_id)
+	{
+//		$data = array(
+//            'topic_title' => $topic_title,
+//			'topic_description' => $topic_description,
+//			'order' => $order
+//        );
+//
+//		$this->db->where('topic_id', $topic_id);
+//		$this->db->update('topic', $data); 
+	}
 
 	public function get_all_topics_by_course_by_lecturer($course_code, $lecturer_reg_no)
 	{
