@@ -8,7 +8,7 @@
         <tbody>
 	<?php  
         //$this->lecturer_model->getAll();
-        $result=$this->lecurer_model->getAll();
+        $result=$this->lecturer_model->getAll();
         foreach ($result as $row) { ?>
 	<tr>
 	<td><?= $row->course_code ?></td>

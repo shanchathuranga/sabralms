@@ -45,7 +45,7 @@ class Lecturer extends CI_Controller
                 //$this->lecturer_model->getAll();
 		
 		//$this->load->view('caurse_view', $data);
-                $this->load->result();
+                //$this->load->result();
                 $data['main_content'] = "course_view";
 		$this->load->view("layouts/main", $data);
 	}
