@@ -32,7 +32,6 @@
 				'<input type="submit" value="Add Attachement" name="submit" />'.
 				'</form>';
 			echo '</p>';
-			break;
 		}
 		echo '<hr/>';
 	}
