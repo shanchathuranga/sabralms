@@ -41,7 +41,17 @@ class Lecturer extends CI_Controller
 		$data['course_code'] = $this->input->post('course_code');
 		$this->load->view("layouts/main", $data);
 	}
+	
+	public function update_topic_view()
+	{
+		
+	}
 
+	public function update_topic()
+	{
+		
+	}
+	
 	public function note_upload_view()
 	{
 		
@@ -52,12 +62,4 @@ class Lecturer extends CI_Controller
 		
 	}
         
-       /* public function show()
-	{
-                
-		$this->load->model("lecturer_model");
-                $data['main_content'] = "course_view";
-		$this->load->view("layouts/main", $data);
-	}*/
-	
 }
