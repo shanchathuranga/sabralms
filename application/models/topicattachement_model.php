@@ -20,7 +20,7 @@ class TopicAttachement_model extends CI_Model
 		
 		if ( $result->num_rows() > 0 )
 		{
-			return $result;
+			return $result->result();
 		}
 		return FALSE;
 	}
