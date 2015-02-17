@@ -47,9 +47,11 @@ class Lecturer extends CI_Controller
 	{
 		$actual_file_name = $_FILES["userfile"]["name"];
 		$unique_file_name = uniqid().$_FILES["userfile"]["name"];
+		$unique_file_name = str_replace(' ', '_', $unique_file_name);
 		$config['upload_path'] = './uploads/';
 		$config['allowed_types'] = '*';
 		$config['file_name'] = $unique_file_name;
+		$config['remove_spaces'] = TRUE;
 		
 		$this->load->library('upload', $config);
 
