@@ -44,27 +44,21 @@ class Lecturer extends CI_Controller
 	
 	public function upload_topic_attachement()
 	{
-    $actual_file_name = $_FILES["userfile"]["name"];
+		$actual_file_name = $_FILES["userfile"]["name"];
 		$unique_file_name = uniqid().$_FILES["userfile"]["name"];
 		$config['upload_path'] = './uploads/';
 		$config['allowed_types'] = '*';
-		$config['max_size']	= '2048';
-		$config['max_width']  = '4096';
-		$config['max_height']  = '4096';
 		$config['file_name'] = $unique_file_name;
 		
 		$this->load->library('upload', $config);
 
-		if ( ! $this->upload->do_upload())
+		if ( !$this->upload->do_upload())
 		{
-			//$error = array('error' => $this->upload->display_errors());
 			echo $this->upload->display_errors();
 		}
 		else
 		{
-			//$data = array('upload_data' => $this->upload->data());
-			echo $actual_file_name;
-			echo "Success";
+			redirect(base_url() . 'lecturer');
 		}
 	}
 
