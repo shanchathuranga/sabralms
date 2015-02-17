@@ -12,4 +12,10 @@ class TopicAttachement_model extends CI_Model
 
 		$this->db->insert('topic_attachement', $data);
 	}
+        
+        public function getTopicId()
+	{       
+		$query = $this->db->query("SELECT topic_id FROM topic_attachement");
+		return $query->result();
+	}
 }
