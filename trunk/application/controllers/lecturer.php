@@ -64,6 +64,20 @@ class Lecturer extends CI_Controller
 			redirect(base_url() . 'lecturer');
 		}
 	}
+	
+	public function download_attachement($attachement_id, $course_code_encoded)
+	{
+		$this->load->helper('download');
+		
+		$this->load->model('topicattachement_model');
+		$attachement = $this->topicattachement_model->get_attachement_by_id($attachement_id);
+
+		$file_path = FCPATH.'uploads/'.$attachement->unique_name;
+		//echo $file_path;
+		$data = file_get_contents($file_path);
+		
+		force_download($attachement->display_name, $data);
+	}
 
 	public function update_topic_view()
 	{
