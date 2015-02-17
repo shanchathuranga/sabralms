@@ -63,7 +63,9 @@ class Lecturer extends CI_Controller
 		{
 			$this->load->model('topicattachement_model');
 			$this->topicattachement_model->insert_topicattachement($actual_file_name, $unique_file_name, $this->input->post('topic_id'));
-			redirect(base_url() . 'lecturer');
+			
+			$course_code_encoded = urlencode( base64_encode( $this->input->post('course') ) );
+			redirect(base_url() . 'lecturer/update_course_view/'.$course_code_encoded);
 		}
 	}
 	
