@@ -28,10 +28,17 @@
 			echo '<br/>';
 
 			$attachements = $this->topicattachement_model->get_topicattachements_by_topic_id($topic->topic_id);
-			foreach ($attachements as $attachement)
+			if ($attachements == NULL)
 			{
-				echo $attachement->display_name;
-				echo '<br/>';
+				echo 'No Attachements';
+			}
+			else
+			{
+				foreach ($attachements as $attachement)
+				{
+					echo $attachement->display_name;
+					echo '<br/>';
+				}
 			}
 			
 			echo '<br/>';
