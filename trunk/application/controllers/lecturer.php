@@ -24,6 +24,7 @@ class Lecturer extends CI_Controller
 		}
 		$this->load->model('course_model');
 		$this->load->model('topic_model');
+		$this->load->model('topicattachement_model');
 		
 		$data['main_content'] = "course_view";
 		$data['course_code'] = base64_decode(urldecode($course_code_encoded));
