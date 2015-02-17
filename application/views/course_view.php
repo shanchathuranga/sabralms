@@ -9,6 +9,7 @@
 	&nbsp;
 </div>
 <div class="grid_9">
+	
 	<?php
 	
 	if ($course)
@@ -25,23 +26,23 @@
 			echo $topic->topic_description;
 			echo '<br/>';
 			echo '<a href="'.base_url().'lecturer/update_topic_view">Update topic</a>';
-			echo '<br/>';
+			echo '<br/><br/><strong>Attachements</strong><br/>';
 
 			$attachements = $this->topicattachement_model->get_topicattachements_by_topic_id($topic->topic_id);
 			if ($attachements == NULL)
 			{
 				echo 'No Attachements';
+				echo '<br/>';
 			}
 			else
 			{
 				foreach ($attachements as $attachement)
 				{
-					echo $attachement->display_name;
+					echo '<i><a href="'.base_url().'lecturer/download_attachement/'.$attachement->topic_attachement_id.'/'.urlencode(base64_encode($course->course_code)).'">'.$attachement->display_name.'</a></i>';
 					echo '<br/>';
 				}
 			}
 			
-			echo '<br/>';
 			echo '<form action="'.base_url().'lecturer/upload_topic_attachement" method="post" enctype="multipart/form-data">'.
 				'<input type="hidden" value="'.$topic->topic_id.'" name="topic_id" />'.
 				'<input type="file" name="userfile" size="20" />'.
