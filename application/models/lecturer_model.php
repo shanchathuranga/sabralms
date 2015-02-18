@@ -18,21 +18,27 @@ class Lecturer_model extends CI_Model
 
         $this->db->insert('lecturer', $data);
 	}
-        
-        
-        public function getAll()
-	{       //$this->load->result();
-		$query = $this->db->query("SELECT lecturer.reg_no
-                                           FROM lecturer
-                                           JOIN course_lecturer ON lecturer.reg_no=course_lecturer.lecturer_reg_no
-                                           UNION
-                                           SELECT course.course_code
-                                           FROM course
-                                           JOIN course_lecturer ON course.course_code=course_lecturer.lecturer_reg_no
-                                           UNION
-                                           SELECT topic.course_code 
-                                           FROM topic
-                                           JOIN course_lecturer ON topic.course_code=course_lecturer.lecturer_reg_no");
-		return $query->result();
+	
+	public function get_lecturer_by_reg_no($reg_no)
+	{
+		$this->db->where('reg_no', $reg_no);
+		$result = $this->db->get('lecturer');
+		
+		if ( $result->num_rows() == 1 )
+		{
+			return $result->row(0);
+		}
+		return FALSE;
+	}
+
+	public function get_all_lecturers()
+	{
+		$result = $this->db->get('lecturer');
+		
+		if ( $result->num_rows() > 0 )
+		{
+			return $result->result();
+		}
+		return FALSE;
 	}
 }

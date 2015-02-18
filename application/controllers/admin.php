@@ -85,8 +85,42 @@ class Admin extends CI_Controller {
 	public function degreecourse_form() {
 		$this->load->model('degree_model');
 		$this->load->model('course_model');
+		$this->load->model('lecturer_model');
+		$this->load->model('courselecturer_model');
 		
 		$data['main_content'] = "degree_course_register_form";
+		$this->load->view("layouts/main", $data);
+	}
+	
+	public function degree_selection_form()
+	{
+		$this->load->model('degree_model');
+		$data['main_content'] = "degree_selection_form";
+		$this->load->view("layouts/main", $data);
+	}
+	
+	public function degree_update_form()
+	{
+		$this->load->model('degreecourse_model');
+		$this->load->model('course_model');
+		$this->load->model('lecturer_model');
+		$this->load->model('courselecturer_model');
+		
+		$data['main_content'] = "degree_update_form";
+		$data['selected_degree'] = $this->input->post('degree');
+		$this->load->view("layouts/main", $data);
+	}
+
+	public function update_degree()
+	{
+		$this->load->model('degreecourse_model');
+		$this->load->model('course_model');
+		$this->load->model('lecturer_model');
+		$this->load->model('courselecturer_model');
+		$this->degreecourse_model->update_degree_content();
+		
+		$data['main_content'] = "degree_update_form";
+		$data['selected_degree'] = $this->input->post('selected_degree');
 		$this->load->view("layouts/main", $data);
 	}
 }

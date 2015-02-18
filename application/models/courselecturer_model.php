@@ -33,6 +33,18 @@ class CourseLecturer_model extends CI_Model
 		return FALSE;
 	}
 	
+	public function get_all_lecturers_by_course($course_code)
+	{
+		$this->db->where('course_code', $course_code);
+		$result = $this->db->get('course_lecturer');
+		
+		if ( $result->num_rows() > 0 )
+		{
+			return $result->result();
+		}
+		return FALSE;
+	}
+
 	public function get_all_courses_by_lecturer_by_year_by_semester($lecturer, $year, $semester)
 	{
 		$query = "SELECT * FROM course WHERE year=$year AND semester=$semester AND course_code IN"
