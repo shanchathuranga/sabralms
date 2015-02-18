@@ -23,5 +23,17 @@ class Student_model extends CI_Model {
 
         $this->db->insert('student', $data);
     }
+	
+	public function get_student_by_regitration_no($reg_no)
+	{
+		$this->db->where('reg_no', $reg_no);
+		$result = $this->db->get('student');
+		
+		if ( $result->num_rows() == 1 )
+		{
+			return $result->row(0);
+		}
+		return FALSE;
+	}
 
 }

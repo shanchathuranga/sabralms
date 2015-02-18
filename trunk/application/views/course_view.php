@@ -6,7 +6,12 @@
 ?>
 
 <div class="grid_3">
-	&nbsp;
+	<div id="side-navigation">
+		<ul class="vert-menu">
+			<li class="vert-menu-header">Navigation</li>
+			<li><a href="<?php echo base_url(); ?>lecturer">My Home</a></li>
+		</ul>
+	</div>
 </div>
 <div class="grid_9">
 	

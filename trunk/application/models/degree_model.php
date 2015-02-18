@@ -22,5 +22,17 @@ class Degree_model extends CI_Model {
 		}
 		return FALSE;
 	}
+	
+	public function get_degree_by_code($degree_code)
+	{
+		$this->db->where('degree_code', $degree_code);
+		$result = $this->db->get('degree');
+		
+		if ( $result->num_rows() == 1 )
+		{
+			return $result->row(0);
+		}
+		return FALSE;
+	}
 
 }
