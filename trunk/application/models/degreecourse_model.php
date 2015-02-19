@@ -31,6 +31,19 @@ class DegreeCourse_model extends CI_Model
 		return FALSE;
 	}
 	
+	public function get_degree_content_by_degree_code_by_course_code($degree_code, $course_code)
+	{
+		$this->db->where('degree_code', $degree_code);
+		$this->db->where('course_code', $course_code);
+		$result = $this->db->get('degree_content');
+		
+		if ( $result->num_rows() == 1 )
+		{
+			return $result->row(0);
+		}
+		return FALSE;
+	}
+
 	public function update_degree_content()
 	{
 		$data = array(
