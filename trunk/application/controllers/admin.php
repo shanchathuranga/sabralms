@@ -23,6 +23,13 @@ class Admin extends CI_Controller {
 		// Add data to the database
 		$this->load->model('student_model');
 		$this->student_model->insert_student();
+		
+		$add_user = $this->input->post('add_user');
+		if ( isset($add_user) && $add_user == 1 )
+		{
+			$this->load->model('user_model');
+			$this->user_model->insert_student_user();
+		}
 
 		redirect(base_url() . 'admin/student_form');
 	}

@@ -8,7 +8,9 @@ class Student_model extends CI_Model {
         $last_name = $this->input->post('last_name');
         $ep_no = $this->input->post('ep_no');
         $contact_no = $this->input->post('contact_no');
+		$email = $this->input->post('email');
         $year = $this->input->post('year');
+		$semester = $this->input->post('semester');
         $degree_code = $this->input->post('degree_code');
 
         $data = array(
@@ -17,7 +19,9 @@ class Student_model extends CI_Model {
             'last_name' => $last_name,
             'ep_no' => $ep_no,
             'contact_no' => $contact_no,
+			'email' => $email,
             'year' => $year,
+			'semester' => $semester,
             'degree_code' => $degree_code
         );
 
