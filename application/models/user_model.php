@@ -28,4 +28,18 @@ class User_model extends CI_Model
 
 		$this->db->insert('user', $data);
 	}
+	
+	public function insert_lecturer_user()
+	{
+		$data = array(
+			'username' => $this->input->post('reg_no'),
+			'password' => md5('123'),
+			'usertype_id' => 2,
+			'user_reg_no' => $this->input->post('reg_no'),
+			'display_name' => $this->input->post('first_name').' '.$this->input->post('last_name')
+		);
+
+		$this->db->insert('user', $data);
+	}
+	
 }

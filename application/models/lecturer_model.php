@@ -8,11 +8,13 @@ class Lecturer_model extends CI_Model
         $first_name = $this->input->post('first_name');
         $last_name = $this->input->post('last_name');
         $display_name = $this->input->post('display_name');
+		$email = $this->input->post('email');
 
         $data = array(
             'reg_no' => $reg_no,
 			'first_name' => $first_name,
             'last_name' => $last_name,
+			'email' => $email,
             'display_name' => $display_name
         );
 

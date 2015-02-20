@@ -36,6 +36,7 @@ class Lecturer extends CI_Controller
 	{
 		$this->load->model('course_model');
 		$this->load->model('topic_model');
+		$this->load->model('topicattachement_model');
 		$this->topic_model->insert_topic();
 		
 		$data['main_content'] = "course_view";

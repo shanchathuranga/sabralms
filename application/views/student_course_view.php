@@ -25,7 +25,7 @@
 		foreach ($topics as $topic)
 		{
 			echo '<p>';
-			echo '<strong>'.$topic->order.'. '.$topic->topic_title.'</strong>';
+			echo '<strong>'.$topic->topic_order.'. '.$topic->topic_title.'</strong>';
 			echo '<br/>';
 			echo $topic->topic_description;
 			echo '<br/>';

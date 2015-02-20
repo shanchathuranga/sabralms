@@ -30,7 +30,6 @@ class Admin extends CI_Controller {
 			$this->load->model('user_model');
 			$this->user_model->insert_student_user();
 		}
-
 		redirect(base_url() . 'admin/student_form');
 	}
 	
@@ -45,6 +44,13 @@ class Admin extends CI_Controller {
 		$this->lecturer_model->insert_lecturer();
 		$this->load->model('courselecturer_model');
 		$this->courselecturer_model->insert_courselecturer();
+		
+		$add_user = $this->input->post('add_user');
+		if ( isset($add_user) && $add_user == 1 )
+		{
+			$this->load->model('user_model');
+			$this->user_model->insert_lecturer_user();
+		}
 		redirect(base_url() . 'admin/lecturer_form');
 	}
 
