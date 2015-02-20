@@ -6,6 +6,7 @@
 	<link href="<?php echo base_url(); ?>assets/css/text.css" rel="stylesheet"/>
 	<link href="<?php echo base_url(); ?>assets/css/custom.css" rel="stylesheet"/>
 	<script type="text/javascript" src="<?php echo base_url(); ?>assets/js/custom.js"></script>
+	<script type="text/javascript" src="<?php echo base_url(); ?>ckeditor/ckeditor.js"></script>
 </head>
 <body>
 	<div id="top-container">
