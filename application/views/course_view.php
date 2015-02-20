@@ -69,7 +69,12 @@
 			<br/>
 			<label for="topic_description">Description</label>
 			<br/>
-			<textarea name="topic_description" rows="4" cols="50"></textarea>
+			<textarea name="topic_description" id="desc_editor" rows="10" cols="80"></textarea>
+			<script>
+                // Replace the <textarea id="editor1"> with a CKEditor
+                // instance, using default configuration.
+                CKEDITOR.replace( 'desc_editor' );
+            </script>
 			<br/>
 			<label for="order">Order</label>
 			<br/>
