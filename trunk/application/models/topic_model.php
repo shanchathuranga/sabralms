@@ -12,7 +12,7 @@ class Topic_model extends CI_Model
 		$data = array(
 			'topic_title' => $topic_title,
 			'topic_description' => $topic_description,
-			'order' => $order,
+			'topic_order' => $order,
 			'course_code' => $course_code,
 			'lecturer_reg_no' => $this->session->userdata('user_reg_no')
 		);
@@ -36,7 +36,7 @@ class Topic_model extends CI_Model
 	{
 		$this->db->where('course_code', $course_code);
 		$this->db->where('lecturer_reg_no', $lecturer_reg_no);
-		$this->db->order_by('order', 'asc'); 
+		$this->db->order_by('topic_order', 'asc'); 
 		$result = $this->db->get('topic');
 		
 		if ( $result->num_rows() > 0 )
