@@ -77,3 +77,24 @@ function selectAllItems(listboxName)
         lbox.options[i].selected = true;
     }
 }
+
+function checkPassword(p1, p2)
+{
+    var p1val = document.getElementById(p1);
+    var p2val = document.getElementById(p2);
+    
+    if (p1val.value !== p2val.value)
+    {
+        alert("Password does not match");
+        return false;
+    }
+    return true;
+}
+
+function clearErrors()
+{
+    var elems = document.getElementsByClassName('error');
+    for (i in elems) {
+        elems[i].innerHTML = '';
+    }
+}

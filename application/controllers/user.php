@@ -1,9 +1,9 @@
 <?php
 
-class User extends CI_Controller
+class User extends CI_Controller 
 {
-	public function index()
-	{
+	public function index() 
+	{	
 	}
 
 	public function login()
@@ -11,8 +11,8 @@ class User extends CI_Controller
 		$data['main_content'] = "login_view";
 		$this->load->view("layouts/main", $data);
 	}
-	
-	public function logout()
+
+	public function logout() 
 	{
 		$this->session->unset_userdata('user_reg_no');
 		$this->session->unset_userdata('username');
@@ -20,26 +20,26 @@ class User extends CI_Controller
 		$this->session->unset_userdata('usertype');
 		$this->session->unset_userdata('logged_in');
 		$this->session->sess_destroy();
-		
+
 		redirect(base_url());
 	}
 
-	public function authenticate()
+	public function authenticate() 
 	{
 		$this->load->model('user_model');
 		$this->load->model('usertype_model');
 
 		$currentUser = $this->user_model->authenticate();
-		if ( $currentUser )
+		if ($currentUser)
 		{
 			$currentUserType = $this->usertype_model->getUserType($currentUser->usertype_id);
-			if ( !$currentUserType )
+			if (!$currentUserType) 
 			{
 				$data['login_errors'] = 'Invalid user. Please contact administrator';
 				$data['main_content'] = "login_view";
 				$this->load->view("layouts/main", $data);
-			}
-			else
+			} 
+			else 
 			{
 				$userData = array(
 					'user_reg_no' => $currentUser->user_reg_no,
@@ -48,32 +48,55 @@ class User extends CI_Controller
 					'usertype' => $currentUserType->usertype_name,
 					'logged_in' => TRUE
 				);
-				
+
 				$this->session->set_userdata($userData);
-				
-				switch ($currentUserType->usertype_name)
+
+				switch ($currentUserType->usertype_name) 
 				{
 					case 'ADMIN':
-						redirect(base_url().'admin');
+						redirect(base_url() . 'admin');
 						break;
 					case 'LECTURER':
-						redirect(base_url().'lecturer');
+						redirect(base_url() . 'lecturer');
 						break;
 					case 'STUDENT':
-						redirect(base_url().'student');
+						redirect(base_url() . 'student');
 						break;
 					default:
 						redirect(base_url());
 						break;
 				}
 			}
-		}
-		else
+		} 
+		else 
 		{
 			$data['login_errors'] = 'Login failed. Please enter valid username and password';
 			$data['main_content'] = "login_view";
 			$this->load->view("layouts/main", $data);
 		}
 	}
-	
+
+	public function view_profile() 
+	{
+		$this->load->model('user_model');
+		
+		$data['main_content'] = "user_profile";
+		$this->load->view("layouts/main", $data);
+	}
+
+	public function update_profile() 
+	{
+		$this->load->model('user_model');
+		$result = $this->user_model->authenticate();
+		if ($result == FALSE)
+		{
+			$data['login_errors'] = 'Old password is incorrect';
+		}
+		
+		$this->user_model->update_user_profile();
+		
+		$data['main_content'] = "user_profile";
+		$this->load->view("layouts/main", $data);
+	}
+
 }
