@@ -183,4 +183,12 @@ class Admin extends CI_Controller {
 		
 		redirect(base_url() . 'admin/image_upload_form');
 	}
+	
+	public function add_site_news()
+	{
+		$this->load->model('news_model');
+		$this->news_model->insert_news();
+		
+		redirect(base_url() . 'admin/update_site_news');
+	}
 }
