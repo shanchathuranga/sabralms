@@ -25,27 +25,17 @@
 	</div>
 </div>
 <div class="grid_9">
-	<h3 >Site News</h3>
-	<hr/>
-	<h4>heading one</h4>
-	<p>heading one heading one heading one heading one heading one heading one heading one heading one heading one heading one
-		heading one heading one heading one heading one heading one heading one heading one heading one heading one heading one
-		heading one heading one heading one heading one heading one heading one heading one heading one heading one heading one
-		heading one heading one heading one heading one heading one heading one heading one heading one heading one heading one
-	</p>
-	<hr/>
-	<h4>heading two</h4>
-	<p>heading one heading one heading one heading one heading one heading one heading one heading one heading one heading one
-		heading one heading one heading one heading one heading one heading one heading one heading one heading one heading one
-		heading one heading one heading one heading one heading one heading one heading one heading one heading one heading one
-		heading one heading one heading one heading one heading one heading one heading one heading one heading one heading one
-	</p>
-	<hr/>
-	<h4>heading three</h4>
-	<p>heading one heading one heading one heading one heading one heading one heading one heading one heading one heading one
-		heading one heading one heading one heading one heading one heading one heading one heading one heading one heading one
-		heading one heading one heading one heading one heading one heading one heading one heading one heading one heading one
-		heading one heading one heading one heading one heading one heading one heading one heading one heading one heading one
-	</p>
-	<hr/>
+	<h4>Site News</h4>
+	
+	<?php
+		$all_news = $this->news_model->get_all_news();
+		
+		foreach ($all_news as $news)
+		{
+			echo '<h4>'.$news->news_heading.'</h4>';
+			echo '<p>'.$news->news_text.'</p>';
+			echo '<hr/>';
+		}
+	?>
+	
 </div>
