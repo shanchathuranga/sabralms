@@ -22,6 +22,7 @@
                 <li><a href="<?php echo base_url(); ?>admin/degreecourse_form">Degree-Course Registration</a></li>
 				<li><a href="<?php echo base_url(); ?>admin/degree_selection_form">Update Degree</a></li>
 				<li><a href="<?php echo base_url(); ?>admin/image_upload_form">Image upload</a></li>
+				<li><a href="<?php echo base_url(); ?>admin/update_site_news">Update Site News</a></li>
 			</ul>
 		</ul>
 	</div>
