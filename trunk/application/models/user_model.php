@@ -42,4 +42,26 @@ class User_model extends CI_Model
 		$this->db->insert('user', $data);
 	}
 	
+	public function get_user_by_reg_no($reg_no)
+	{
+		$this->db->where('user_reg_no', $reg_no);		
+		$result = $this->db->get('user');
+		
+		if ( $result->num_rows() == 1 )
+		{
+			return $result->row(0);
+		}
+		return FALSE;
+	}
+	
+	public function update_user_profile()
+	{
+		$data = array(
+               'password' => md5($this->input->post('new_password'))
+            );
+
+		$this->db->where('user_id', $this->input->post('user_id'));
+		$this->db->update('user', $data); 
+	}
+	
 }

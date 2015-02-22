@@ -22,7 +22,8 @@
 					$display_name = $this->session->userdata('display_name');
 					if ( isset($display_name) && !empty($display_name) ) :
 				?>
-				<div id="login-area" class="grid_3">You are logged in as <b><?php echo $display_name; ?></b><br/>
+				<div id="login-area" class="grid_3">You are logged in as 
+					<a href="<?php echo base_url().'user/view_profile'; ?>"><b><?php echo $display_name; ?></b></a><br/>
 					<a href="<?php echo base_url(); ?>user/logout">Logout</a></div>
 				<?php else : ?>
 				<div id="login-area" class="grid_3">You are not logged in<br/><a href="<?php echo base_url(); ?>user/login">Login Here</a></div>
