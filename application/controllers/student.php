@@ -47,4 +47,20 @@ class Student extends CI_Controller
 		
 		force_download($attachement->display_name, $data);
 	}
+	
+	public function view_exam_results()
+	{
+		
+	}
+	
+	public function view_assignments()
+	{
+		
+	}
+	
+	public function view_time_tables()
+	{
+		
+	}
+	
 }
