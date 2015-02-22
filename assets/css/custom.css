@@ -90,8 +90,7 @@ p.error {
     list-style: none;
 }
 .vert-submenu {
-    display: none;
-    list-style: none;
+    /*list-style: none;*/
 }
 .vert-menu span {
     cursor: pointer;

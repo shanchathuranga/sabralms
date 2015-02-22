@@ -136,4 +136,51 @@ class Admin extends CI_Controller {
 		$data['selected_degree'] = $this->input->post('selected_degree');
 		$this->load->view("layouts/main", $data);
 	}
+	
+	public function image_upload_form()
+	{
+		$this->load->model('imagestore_model');
+		$data['main_content'] = "img_upload_form";
+		$this->load->view("layouts/main", $data);
+	}
+	
+	public function image_upload()
+	{
+		$actual_file_name = $_FILES["userfile"]["name"];
+		$unique_file_name = uniqid().$_FILES["userfile"]["name"];
+		$unique_file_name = str_replace(' ', '_', $unique_file_name);
+		$config['upload_path'] = './uploads/';
+		$config['allowed_types'] = 'png|gif|jpg';
+		$config['file_name'] = $unique_file_name;
+		$config['remove_spaces'] = TRUE;
+		
+		$this->load->library('upload', $config);
+
+		if ( !$this->upload->do_upload())
+		{
+			echo $this->upload->display_errors();
+		}
+		else
+		{
+			$this->load->model('imagestore_model');
+			$this->imagestore_model->insert_image($actual_file_name, $unique_file_name, $this->input->post('display_name'), $this->input->post('admin_reg_no'));
+			
+			redirect(base_url() . 'admin/image_upload_form');
+		}
+	}
+	
+	public function delete_uploaded_image($image_id)
+	{
+		$this->load->model('imagestore_model');
+		$image_info = $this->imagestore_model->get_image_by_id($image_id);
+		if ($image_info)
+		{
+			$file_path = FCPATH.'uploads/'.$image_info->unique_name;
+			unlink($file_path);
+		}
+		
+		$this->imagestore_model->delete_image($image_id);
+		
+		redirect(base_url() . 'admin/image_upload_form');
+	}
 }

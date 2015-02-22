@@ -1,3 +1,7 @@
+<?php
+	$admin_reg_no = $this->session->userdata('user_reg_no');
+?>
+
 <div class="grid_3">
 	<div id="side-navigation">
 		<ul class="vert-menu">
@@ -23,9 +27,46 @@
 	</div>
 </div>
 <div class="grid_9">
-	<h3>Latest Activites</h3>
-	<ul>
-		<li>21 New users registered in last week</li>
-		<li>2 New Courses added</li>
-	</ul>
+	<form action="<?php echo base_url().'admin/image_upload'; ?>" method="post" enctype="multipart/form-data">
+		<input type="hidden" value="<?php echo $admin_reg_no; ?>" name="admin_reg_no" />
+		<br/>
+		<label for="display_name">Image Name</label>
+		<br/>
+		<input type="text" name="display_name" />
+		<br/>
+		<br/>
+		<input type="file" name="userfile" size="20" />
+		<br/>
+		<br/>
+		<input type="submit" value="Upload Image" name="submit" />
+	</form>
+	
+	<br/>
+	<hr/>
+	<table>
+		<tr>
+			<th>Image Name</th>
+			<th>Path</th>
+			<th>Action</th>
+		</tr>
+		<?php
+		
+		$all_images = $this->imagestore_model->get_all_images_by_user($admin_reg_no);
+		if ( $all_images )
+		{
+			foreach ($all_images as $image) 
+			{
+				echo '<tr>';
+					echo '<td>'.$image->display_name.'</td>';
+					$image_link = 'uploads/'.$image->unique_name;
+					echo '<td><a href="'.site_url($image_link).'" target="_blank">Image URL</a></td>';
+					echo '<td>';
+					echo '<a href="'.base_url().'admin/delete_uploaded_image/'.$image->image_id.'">Delete</a>';
+					echo '</td>';
+				echo '</tr>';
+			}
+		}
+		
+		?>
+	</table>
 </div>
