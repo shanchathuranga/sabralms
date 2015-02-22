@@ -83,24 +83,22 @@ class Lecturer extends CI_Controller
 		force_download($attachement->display_name, $data);
 	}
 
-	public function update_topic_view()
+	public function view_exam_results()
 	{
-		
-	}
-
-	public function update_topic()
-	{
-		
+		$data['main_content'] = "exam_results";
+		$this->load->view("layouts/main", $data);
 	}
 	
-	public function note_upload_view()
+	public function view_assignments()
 	{
-		
+		$data['main_content'] = "assignments";
+		$this->load->view("layouts/main", $data);
 	}
 	
-	public function note_upload()
+	public function view_time_tables()
 	{
-		
+		$data['main_content'] = "time_tables";
+		$this->load->view("layouts/main", $data);
 	}
         
 }

@@ -50,17 +50,20 @@ class Student extends CI_Controller
 	
 	public function view_exam_results()
 	{
-		
+		$data['main_content'] = "exam_results";
+		$this->load->view("layouts/main", $data);
 	}
 	
 	public function view_assignments()
 	{
-		
+		$data['main_content'] = "assignments";
+		$this->load->view("layouts/main", $data);
 	}
 	
 	public function view_time_tables()
 	{
-		
+		$data['main_content'] = "time_tables";
+		$this->load->view("layouts/main", $data);
 	}
 	
 }
