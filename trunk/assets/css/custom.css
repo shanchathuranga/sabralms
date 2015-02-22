@@ -1,29 +1,23 @@
 body {
-    background-color:#dfded4;
+    background-color:#f6f6f6;
 }
-
 /* Header styles starting here */
 #top-container {
     width:100%;
     margin:0;
     padding:0;
-    height:100px;
-    background-color:#ca171b;
-}
-#red-line {
-    width:100%;
-    height:5px;
-    background-color:#ca171b;
+    height:90px;
+    background-color:#cbcbc1;
 }
 #logo-area {
     width:100%;
-    height:85px;
+    height:80px;
     padding-top:5px;
 }
 #brown-line {
     width:100%;
     height:5px;
-    background-color:#432f21;
+    background-color:#72441e;
 }
 #logo {
     background-image: url("../images/sablogo.png");
@@ -35,28 +29,28 @@ body {
 #login-area {
     padding-top: 15px;
     height:60px;
-    color: #dfded4;
+    color: #72441e;
     text-align:right;
 }
 #login-area a {
 
 }
 #login-area a:link {
-    color: #dfded4;
+    color: #72441e;
 }
 #login-area a:visited {
-    color: #dfded4;
+    color: #72441e;
 }
 #login-area a:hover {
-    color: #432f21;
+    color: #e7512d;
 }
 #login-area a:active {
-    color: #432f21;
+    color: #e7512d;
 }
 p.logo-title {
-    padding-top: 15px;
-    padding-left: 80px;
-    color: #dfded4;
+    padding-top: 18px;
+    padding-left: 170px;
+    color: #72441e;
 }
 .lms-text {
     font-size:22px;

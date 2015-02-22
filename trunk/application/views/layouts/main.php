@@ -6,11 +6,10 @@
 	<link href="<?php echo base_url(); ?>assets/css/text.css" rel="stylesheet"/>
 	<link href="<?php echo base_url(); ?>assets/css/custom.css" rel="stylesheet"/>
 	<script type="text/javascript" src="<?php echo base_url(); ?>assets/js/custom.js"></script>
-	<script type="text/javascript" src="<?php echo base_url(); ?>ckeditor/ckeditor.js"></script>
+	<script type="text/javascript" src="<?php echo base_url(); ?>nicedit/nicEdit.js"></script>
 </head>
 <body>
 	<div id="top-container">
-		<div id="red-line"></div>
 		<div class="container_12">
 			<div id="logo-area">
 				<div id="logo" class="grid_9">

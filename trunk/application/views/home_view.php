@@ -2,16 +2,25 @@
 	<div id="side-navigation">
 		<ul class="vert-menu">
 			<li class="vert-menu-header">Navigation</li>
-			<li onclick="toggleMenuItem('vert-submenu-1')"><span>Sub menu 1</span></li>
-			<ul id="vert-submenu-1" class="vert-submenu">
-				<li>Link 1</li>
-				<li>Link 2</li>
-			</ul>
-			<li onclick="toggleMenuItem('vert-submenu-2')"><span>Sub menu 2</span></li>
-			<ul id="vert-submenu-2" class="vert-submenu">
-				<li>Link 1</li>
-				<li>Link 2</li>
-			</ul>
+			<?php
+				$usertype = $this->session->userdata('usertype');
+				switch ($usertype)
+				{
+					case 'ADMIN':
+						echo '<li><a href="'.base_url().'admin">My Home</a></li>';
+						break;
+					case 'LECTURER':
+						echo '<li><a href="'.base_url().'lecturer">My Home</a></li>';
+						break;
+					case 'STUDENT':
+						echo '<li><a href="'.base_url().'student">My Home</a></li>';
+						break;
+					default:
+						echo '<li><a href="'.base_url().'">My Home</a></li>';
+						break;
+				}
+			?>
+			
 		</ul>
 	</div>
 </div>
