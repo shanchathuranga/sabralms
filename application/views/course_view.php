@@ -71,9 +71,8 @@
 			<br/>
 			<textarea name="topic_description" id="desc_editor" rows="10" cols="80"></textarea>
 			<script>
-                // Replace the <textarea id="editor1"> with a CKEditor
-                // instance, using default configuration.
-                CKEDITOR.replace( 'desc_editor' );
+				new nicEditor({iconsPath : '<?php echo base_url(); ?>nicedit/nicEditorIcons.gif'}).panelInstance('desc_editor');
+			//new nicEditor({fullPanel : true}).panelInstance('desc_editor');
             </script>
 			<br/>
 			<label for="order">Order</label>
