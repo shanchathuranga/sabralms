@@ -2,8 +2,16 @@
 	<div id="side-navigation">
 		<ul class="vert-menu">
 			<li class="vert-menu-header">Navigation</li>
-			<li><a href="<?php echo base_url(); ?>">Site Home</a></li>
-			<li><a href="<?php echo base_url(); ?>student">My Home</a></li>
+			<ul id="vert-submenu-1" class="vert-submenu">
+				<li><a href="<?php echo base_url(); ?>">Site Home</a></li>
+				<li><a href="<?php echo base_url(); ?>student">My Home</a></li>
+			</ul>
+			<li class="vert-menu-header">Activities</li>
+			<ul id="vert-submenu-1" class="vert-submenu">
+				<li><a href="<?php echo base_url(); ?>student/view_exam_results">Exam Results</a></li>
+				<li><a href="<?php echo base_url(); ?>student/view_assignments">Assignments</a></li>
+				<li><a href="<?php echo base_url(); ?>student/view_time_tables">Time Tables</a></li>
+			</ul>
 		</ul>
 	</div>
 </div>
