@@ -24,9 +24,20 @@
 	</div>
 </div>
 <div class="grid_9">
-	<h3>Latest Activites</h3>
-	<ul>
-		<li>21 New users registered in last week</li>
-		<li>2 New Courses added</li>
-	</ul>
+	<strong>Add new Event/Announcement/News</strong><br/><br/>
+	<form action="<?php echo base_url().'admin/add_site_news'; ?>" method="post">
+		<label for="event_title">Event Heading</label>
+		<br/>
+		<input type="text" name="event_title" />
+		<br/>
+		<label for="event_description">Description</label>
+		<br/>
+		<textarea name="event_description" id="desc_editor" rows="10" cols="80"></textarea>
+		<script>
+			new nicEditor({iconsPath : '<?php echo base_url(); ?>nicedit/nicEditorIcons.gif'}).panelInstance('desc_editor');
+        </script>
+		<br/>
+		<br/>
+		<input type="submit" value="Add Event"/>
+	</form>
 </div>
