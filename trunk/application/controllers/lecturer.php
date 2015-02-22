@@ -25,6 +25,7 @@ class Lecturer extends CI_Controller
 		$this->load->model('course_model');
 		$this->load->model('topic_model');
 		$this->load->model('topicattachement_model');
+		$this->load->model('assignment_model');
 		
 		$data['main_content'] = "course_view";
 		$data['course_code'] = base64_decode(urldecode($course_code_encoded));
@@ -37,6 +38,7 @@ class Lecturer extends CI_Controller
 		$this->load->model('course_model');
 		$this->load->model('topic_model');
 		$this->load->model('topicattachement_model');
+		$this->load->model('assignment_model');
 		$this->topic_model->insert_topic();
 		
 		$course_code_encoded = urlencode( base64_encode( $this->input->post('course_code') ) );
@@ -81,6 +83,46 @@ class Lecturer extends CI_Controller
 		$data = file_get_contents($file_path);
 		
 		force_download($attachement->display_name, $data);
+	}
+	
+	public function upload_assignment()
+	{
+		$actual_file_name = $_FILES["userfile"]["name"];
+		$unique_file_name = uniqid().$_FILES["userfile"]["name"];
+		$unique_file_name = str_replace(' ', '_', $unique_file_name);
+		$config['upload_path'] = './uploads/';
+		$config['allowed_types'] = '*';
+		$config['file_name'] = $unique_file_name;
+		$config['remove_spaces'] = TRUE;
+		
+		$this->load->library('upload', $config);
+
+		if ( !$this->upload->do_upload())
+		{
+			echo $this->upload->display_errors();
+		}
+		else
+		{
+			$this->load->model('assignment_model');
+			$this->assignment_model->insert_assignment($actual_file_name, $unique_file_name, $this->input->post('topic_id'));
+			
+			$course_code_encoded = urlencode( base64_encode( $this->input->post('course') ) );
+			redirect(base_url() . 'lecturer/update_course_view/'.$course_code_encoded);
+		}
+	}
+	
+	public function download_assignment($assignment_id)
+	{
+		$this->load->helper('download');
+		
+		$this->load->model('assignment_model');
+		$assignment = $this->assignment_model->get_assignment_by_id($assignment_id);
+
+		$file_path = FCPATH.'uploads/'.$assignment->unique_name;
+		//echo $file_path;
+		$data = file_get_contents($file_path);
+		
+		force_download($assignment->display_name, $data);
 	}
 
 	public function view_exam_results()

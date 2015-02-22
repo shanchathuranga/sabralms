@@ -42,6 +42,7 @@
 			echo '<a href="'.base_url().'lecturer/update_topic_view">Update topic</a>';
 			echo '<br/><br/><strong>Attachements</strong><br/>';
 
+			// Attachements
 			$attachements = $this->topicattachement_model->get_topicattachements_by_topic_id($topic->topic_id);
 			if ($attachements == NULL)
 			{
@@ -52,18 +53,46 @@
 			{
 				foreach ($attachements as $attachement)
 				{
-					echo '<img src="'.base_url().'assets/images/attachement4.png"/> <i><a href="'.base_url().'lecturer/download_attachement/'.$attachement->topic_attachement_id.'/'.urlencode(base64_encode($course->course_code)).'">'.$attachement->display_name.'</a></i>';
+					echo '<img src="'.base_url().'assets/images/assignment1.png"/> <i><a href="'.base_url().'lecturer/download_attachement/'.$attachement->topic_attachement_id.'/'.urlencode(base64_encode($course->course_code)).'">'.$attachement->display_name.'</a></i>';
 					echo '<br/>';
 				}
 			}
-			
+						
 			echo '<form action="'.base_url().'lecturer/upload_topic_attachement" method="post" enctype="multipart/form-data">'.
 				'<input type="hidden" value="'.$topic->topic_id.'" name="topic_id" />'.
 				'<input type="hidden" value="'.$course_code.'" name="course" />'.
 				'<input type="file" name="userfile" size="20" />'.
 				'<input type="submit" value="Add Attachement" name="submit" />'.
 				'</form>';
+			
+			echo '<br/><br/><strong>Assignments</strong><br/>';
+			
+			// Assignments
+			$assignments = $this->assignment_model->get_assignments_by_topic_id($topic->topic_id);
+			if ($assignments == NULL)
+			{
+				echo 'No Assignments';
+				echo '<br/>';
+			}
+			else
+			{
+				foreach ($assignments as $assignment)
+				{
+					echo '<img src="'.base_url().'assets/images/attachement5.png"/> <i><a href="'.base_url().'lecturer/download_assignment/'.$assignment->assignment_id.'/'.urlencode(base64_encode($course->course_code)).'">'.$assignment->display_name.'</a></i>';
+					echo '<br/>';
+				}
+			}
+			
+			echo '<br/>';
+			echo '<form action="'.base_url().'lecturer/upload_assignment" method="post" enctype="multipart/form-data">'.
+				'<input type="hidden" value="'.$topic->topic_id.'" name="topic_id" />'.
+				'<input type="hidden" value="'.$course_code.'" name="course" />'.
+				'<input type="file" name="userfile" size="20" />'.
+				'<input type="submit" value="Add Assignment" name="submit" />'.
+				'</form>';
+			
 			echo '</p>';
+			echo '<br/>';
 		}
 		echo '<hr/>';
 	}

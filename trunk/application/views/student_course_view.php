@@ -38,7 +38,9 @@
 			echo '<br/>';
 			echo $topic->topic_description;
 			echo '<br/>';
+			echo '<br/><strong>Attachements</strong><br/>';
 			
+			// Attachements
 			$attachements = $this->topicattachement_model->get_topicattachements_by_topic_id($topic->topic_id);
 			if ($attachements == NULL)
 			{
@@ -49,7 +51,25 @@
 			{
 				foreach ($attachements as $attachement)
 				{
-					echo '<img src="'.base_url().'assets/images/attachement5.png"/> <i><a href="'.base_url().'student/download_attachement/'.$attachement->topic_attachement_id.'/'.urlencode(base64_encode($course->course_code)).'">'.$attachement->display_name.'</a></i>';
+					echo '<img src="'.base_url().'assets/images/assignment1.png"/> <i><a href="'.base_url().'student/download_attachement/'.$attachement->topic_attachement_id.'/'.urlencode(base64_encode($course->course_code)).'">'.$attachement->display_name.'</a></i>';
+					echo '<br/>';
+				}
+			}
+			
+			// Assignments
+			echo '<br/><strong>Assignments</strong><br/>';
+			
+			$assignments = $this->assignment_model->get_assignments_by_topic_id($topic->topic_id);
+			if ($assignments == NULL)
+			{
+				echo 'No Attachements';
+				echo '<br/>';
+			}
+			else
+			{
+				foreach ($assignments as $assignment)
+				{
+					echo '<img src="'.base_url().'assets/images/attachement5.png"/> <i><a href="'.base_url().'student/download_assignment/'.$assignment->assignment_id.'/'.urlencode(base64_encode($course->course_code)).'">'.$assignment->display_name.'</a></i>';
 					echo '<br/>';
 				}
 			}
