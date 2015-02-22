@@ -9,6 +9,7 @@
 	<div id="side-navigation">
 		<ul class="vert-menu">
 			<li class="vert-menu-header">Navigation</li>
+			<li><a href="<?php echo base_url(); ?>">Site Home</a></li>
 			<li><a href="<?php echo base_url(); ?>lecturer">My Home</a></li>
 		</ul>
 	</div>
@@ -43,7 +44,7 @@
 			{
 				foreach ($attachements as $attachement)
 				{
-					echo '<i><a href="'.base_url().'lecturer/download_attachement/'.$attachement->topic_attachement_id.'/'.urlencode(base64_encode($course->course_code)).'">'.$attachement->display_name.'</a></i>';
+					echo '<img src="'.base_url().'assets/images/attachement4.png"/> <i><a href="'.base_url().'lecturer/download_attachement/'.$attachement->topic_attachement_id.'/'.urlencode(base64_encode($course->course_code)).'">'.$attachement->display_name.'</a></i>';
 					echo '<br/>';
 				}
 			}

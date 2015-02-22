@@ -7,6 +7,7 @@
 		<ul class="vert-menu">
 			<li class="vert-menu-header">Navigation</li>
 			<ul id="vert-submenu-1" class="vert-submenu">
+				<li><a href="<?php echo base_url(); ?>">Site Home</a></li>
 				<li><a href="<?php echo base_url(); ?>admin">My Home</a></li>
 			</ul>
 			<li class="vert-menu-header">User Registration</li>

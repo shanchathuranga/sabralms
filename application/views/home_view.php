@@ -7,16 +7,19 @@
 				switch ($usertype)
 				{
 					case 'ADMIN':
+						echo '<li><a href="'.base_url().'">Site Home</a></li>';
 						echo '<li><a href="'.base_url().'admin">My Home</a></li>';
 						break;
 					case 'LECTURER':
+						echo '<li><a href="'.base_url().'">Site Home</a></li>';
 						echo '<li><a href="'.base_url().'lecturer">My Home</a></li>';
 						break;
 					case 'STUDENT':
+						echo '<li><a href="'.base_url().'">Site Home</a></li>';
 						echo '<li><a href="'.base_url().'student">My Home</a></li>';
 						break;
 					default:
-						echo '<li><a href="'.base_url().'">My Home</a></li>';
+						echo '<li><a href="'.base_url().'">Site Home</a></li>';
 						break;
 				}
 			?>
