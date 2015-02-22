@@ -2,12 +2,13 @@
 
 class Assignment_model extends CI_Model
 {
-	public function insert_assignment($display_name, $unique_name, $topic_id)
+	public function insert_assignment($display_name, $unique_name, $topic_id, $due_date)
 	{
 		$data = array(
 			'display_name' => $display_name,
 			'unique_name' => $unique_name,
-			'topic_id' => $topic_id
+			'topic_id' => $topic_id,
+			'due_date' => $due_date
 		);
 
 		$this->db->insert('assignment', $data);
