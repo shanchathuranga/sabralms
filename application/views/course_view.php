@@ -79,6 +79,7 @@
 				foreach ($assignments as $assignment)
 				{
 					echo '<img src="'.base_url().'assets/images/attachement5.png"/> <i><a href="'.base_url().'lecturer/download_assignment/'.$assignment->assignment_id.'/'.urlencode(base64_encode($course->course_code)).'">'.$assignment->display_name.'</a></i>';
+					echo ' <strong>(Due date : '.')</strong>';
 					echo '<br/>';
 				}
 			}
