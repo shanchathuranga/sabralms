@@ -26,6 +26,7 @@ class Student extends CI_Controller
 		$this->load->model('course_model');
 		$this->load->model('topic_model');
 		$this->load->model('student_model');
+		$this->load->model('assignment_model');
 		$this->load->model('degreecourse_model');
 		$this->load->model('topicattachement_model');
 		
@@ -46,6 +47,20 @@ class Student extends CI_Controller
 		$data = file_get_contents($file_path);
 		
 		force_download($attachement->display_name, $data);
+	}
+	
+	public function download_assignment($assignment_id)
+	{
+		$this->load->helper('download');
+		
+		$this->load->model('assignment_model');
+		$assignment = $this->assignment_model->get_assignment_by_id($assignment_id);
+
+		$file_path = FCPATH.'uploads/'.$assignment->unique_name;
+		//echo $file_path;
+		$data = file_get_contents($file_path);
+		
+		force_download($assignment->display_name, $data);
 	}
 	
 	public function view_exam_results()
