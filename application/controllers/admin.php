@@ -54,8 +54,8 @@ class Admin extends CI_Controller {
 		redirect(base_url() . 'admin/lecturer_form');
 	}
 
-	public function Site_news() {
-		$data['main_content'] = "site_news";
+	public function update_site_news() {
+		$data['main_content'] = "admin_site_news";
 		$this->load->view("layouts/main", $data);
 	}
 
