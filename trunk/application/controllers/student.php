@@ -65,6 +65,11 @@ class Student extends CI_Controller
 	
 	public function view_exam_results()
 	{
+		$this->load->model('student_model');
+		$this->load->model('degreecourse_model');
+		$this->load->model('examresult_model');
+		$this->load->model('course_model');
+		
 		$data['main_content'] = "exam_results";
 		$this->load->view("layouts/main", $data);
 	}

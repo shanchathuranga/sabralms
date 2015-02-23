@@ -44,4 +44,17 @@ class ExamResult_model extends CI_Model
 		}
 		return FALSE;
 	}
+	
+	public function get_examresults_by_lecturer_by_course($lecturer_reg_no, $course_code)
+	{
+		$this->db->where('lecturer_reg_no', $lecturer_reg_no);
+		$this->db->where('course_code', $course_code);
+		$result = $this->db->get('exam_result');
+		
+		if ( $result->num_rows() > 0 )
+		{
+			return $result->result();
+		}
+		return FALSE;
+	}
 }
