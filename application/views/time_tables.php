@@ -83,6 +83,7 @@
 			echo '<tr>';
 			echo '<td>'.$timetable->ct_title.'</td>';
 			echo '<td>'.$course->course_code.' / '.$course->course_title.'</td>';
+			echo '<td><a href="'.base_url().'lecturer/download_timetable/'.$timetable->ct_id.'">'.$timetable->display_name.'</a></td>';
 			echo '<td><a href="'.base_url().'lecturer/delete_timetable/'.$timetable->ct_id.'">Delete</a></td>';
 			echo '</tr>';
 		}

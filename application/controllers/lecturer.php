@@ -127,6 +127,10 @@ class Lecturer extends CI_Controller
 
 	public function view_exam_results()
 	{
+		$this->load->model('courselecturer_model');
+		$this->load->model('course_model');
+		$this->load->model('examresult_model');
+		
 		$data['main_content'] = "exam_results";
 		$this->load->view("layouts/main", $data);
 	}
@@ -181,5 +185,53 @@ class Lecturer extends CI_Controller
 
 		redirect(base_url() . 'lecturer/view_time_tables');
 	}
-        
+
+	public function upload_examresult()
+	{
+		$actual_file_name = $_FILES["userfile"]["name"];
+		$unique_file_name = uniqid().$_FILES["userfile"]["name"];
+		$unique_file_name = str_replace(' ', '_', $unique_file_name);
+		$config['upload_path'] = './uploads/';
+		$config['allowed_types'] = '*';
+		$config['file_name'] = $unique_file_name;
+		$config['remove_spaces'] = TRUE;
+		
+		$this->load->library('upload', $config);
+
+		if ( !$this->upload->do_upload())
+		{
+			echo $this->upload->display_errors();
+		}
+		else
+		{
+			$this->load->model('examresult_model');
+			$this->examresult_model->insert_examresult(
+					$this->input->post('title'), $actual_file_name, $unique_file_name, 
+					$this->input->post('course_code'), $this->session->userdata('user_reg_no'));
+			
+			redirect(base_url() . 'lecturer/view_exam_results');
+		}
+	}
+	
+	public function delete_examresult($ex_id)
+	{
+		$this->load->model('examresult_model');
+		$this->examresult_model->delete_examresult($ex_id);
+
+		redirect(base_url() . 'lecturer/view_exam_results');
+	}
+	
+	public function download_examresult($ex_id)
+	{
+		$this->load->helper('download');
+		
+		$this->load->model('examresult_model');
+		$examresult = $this->examresult_model->get_examresult_by_id($ex_id);
+
+		$file_path = FCPATH.'uploads/'.$examresult->unique_name;
+		//echo $file_path;
+		$data = file_get_contents($file_path);
+		
+		force_download($examresult->display_name, $data);
+	}
 }
