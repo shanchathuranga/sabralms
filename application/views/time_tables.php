@@ -38,6 +38,9 @@
 	<?php } ?>
 </div>
 <div class="grid_9">
+	
+	<?php if ($usertype == 'LECTURER') { ?>
+	
 	<form action="<?php echo base_url().'lecturer/upload_timetables'; ?>" method="post" enctype="multipart/form-data">
 		<h4>Time Tables</h4>
 		<label>Title</label>
@@ -91,5 +94,40 @@
 	}
 	
 	?>
+	
+	<?php } else if ($usertype == 'STUDENT') { ?>
+	
+	<h4>Time Tables</h4>
+	
+	<?php
+		$student_info = $this->student_model->get_student_by_regitration_no($this->session->userdata('user_reg_no'));
+		$content = $this->degreecourse_model->get_degree_contents_by_degree_by_year_by_semester(
+				$student_info->degree_code, $student_info->year, $student_info->semester);
+		
+		if ($content != FALSE)
+		{
+			echo '<table>';
+			foreach ($content as $c)
+			{
+				$result = $this->coursetimetable_model->get_timetables_by_lecturer_by_course($c->lecturer_reg_no, $c->course_code);
+			
+				if ($result != FALSE)
+				{
+					foreach ($result as $ct)
+					{
+						$course = $this->course_model->get_course_by_code($ct->course_code);
+						echo '<tr>';
+						echo '<td>'.$ct->ct_title.'</td>';
+						echo '<td>'.$course->course_code.' / '.$course->course_title.'</td>';
+						echo '<td><a href="'.base_url().'student/download_timetable/'.$ct->ct_id.'">'.$ct->display_name.'</a></td>';
+						echo '</tr>';
+					}
+				}
+			}
+			echo '</table>';
+		}
+	?>
+	
+	<?php } ?>
 	
 </div>

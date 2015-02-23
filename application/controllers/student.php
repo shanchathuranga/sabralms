@@ -82,8 +82,40 @@ class Student extends CI_Controller
 	
 	public function view_time_tables()
 	{
+		$this->load->model('student_model');
+		$this->load->model('degreecourse_model');
+		$this->load->model('course_model');
+		$this->load->model('coursetimetable_model');
+	
 		$data['main_content'] = "time_tables";
 		$this->load->view("layouts/main", $data);
 	}
 	
+	public function download_examresult($ex_id)
+	{
+		$this->load->helper('download');
+		
+		$this->load->model('examresult_model');
+		$examresult = $this->examresult_model->get_examresult_by_id($ex_id);
+
+		$file_path = FCPATH.'uploads/'.$examresult->unique_name;
+		//echo $file_path;
+		$data = file_get_contents($file_path);
+		
+		force_download($examresult->display_name, $data);
+	}
+	
+	public function download_timetable($ct_id)
+	{
+		$this->load->helper('download');
+		
+		$this->load->model('coursetimetable_model');
+		$timetable = $this->coursetimetable_model->get_timetable_by_id($ct_id);
+
+		$file_path = FCPATH.'uploads/'.$timetable->unique_name;
+		//echo $file_path;
+		$data = file_get_contents($file_path);
+		
+		force_download($timetable->display_name, $data);
+	}
 }

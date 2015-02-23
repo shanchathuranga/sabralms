@@ -234,4 +234,18 @@ class Lecturer extends CI_Controller
 		
 		force_download($examresult->display_name, $data);
 	}
+	
+	public function download_timetable($ct_id)
+	{
+		$this->load->helper('download');
+		
+		$this->load->model('coursetimetable_model');
+		$timetable = $this->coursetimetable_model->get_timetable_by_id($ct_id);
+
+		$file_path = FCPATH.'uploads/'.$timetable->unique_name;
+		//echo $file_path;
+		$data = file_get_contents($file_path);
+		
+		force_download($timetable->display_name, $data);
+	}
 }
