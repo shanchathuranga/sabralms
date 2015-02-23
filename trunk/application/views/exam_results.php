@@ -119,7 +119,7 @@
 						echo '<tr>';
 						echo '<td>'.$examresult->ex_title.'</td>';
 						echo '<td>'.$course->course_code.' / '.$course->course_title.'</td>';
-						echo '<td><a href="'.base_url().'lecturer/download_examresult/'.$examresult->ex_id.'">'.$examresult->display_name.'</a></td>';
+						echo '<td><a href="'.base_url().'student/download_examresult/'.$examresult->ex_id.'">'.$examresult->display_name.'</a></td>';
 						echo '</tr>';
 					}
 				}

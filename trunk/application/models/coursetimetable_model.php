@@ -32,4 +32,29 @@ class CourseTimetable_model extends CI_Model
 		$this->db->where('ct_id', $ct_id);
 		$this->db->delete('course_timetable'); 
 	}
+	
+	public function get_timetables_by_lecturer_by_course($lecturer_reg_no, $course_code)
+	{
+		$this->db->where('lecturer_reg_no', $lecturer_reg_no);
+		$this->db->where('course_code', $course_code);
+		$result = $this->db->get('course_timetable');
+		
+		if ( $result->num_rows() > 0 )
+		{
+			return $result->result();
+		}
+		return FALSE;
+	}
+	
+	public function get_timetable_by_id($ct_id)
+	{
+		$this->db->where('ct_id', $ct_id);
+		$result = $this->db->get('course_timetable');
+		
+		if ( $result->num_rows() == 1 )
+		{
+			return $result->row(0);
+		}
+		return FALSE;
+	}
 }
