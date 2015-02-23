@@ -139,8 +139,47 @@ class Lecturer extends CI_Controller
 	
 	public function view_time_tables()
 	{
+		$this->load->model('courselecturer_model');
+		$this->load->model('course_model');
+		$this->load->model('coursetimetable_model');
+		
 		$data['main_content'] = "time_tables";
 		$this->load->view("layouts/main", $data);
+	}
+	
+	public function upload_timetables()
+	{
+		$actual_file_name = $_FILES["userfile"]["name"];
+		$unique_file_name = uniqid().$_FILES["userfile"]["name"];
+		$unique_file_name = str_replace(' ', '_', $unique_file_name);
+		$config['upload_path'] = './uploads/';
+		$config['allowed_types'] = '*';
+		$config['file_name'] = $unique_file_name;
+		$config['remove_spaces'] = TRUE;
+		
+		$this->load->library('upload', $config);
+
+		if ( !$this->upload->do_upload())
+		{
+			echo $this->upload->display_errors();
+		}
+		else
+		{
+			$this->load->model('coursetimetable_model');
+			$this->coursetimetable_model->insert_timetable(
+					$this->input->post('title'), $actual_file_name, $unique_file_name, 
+					$this->input->post('course_code'), $this->session->userdata('user_reg_no'));
+			
+			redirect(base_url() . 'lecturer/view_time_tables');
+		}
+	}
+	
+	public function delete_timetable($ct_id)
+	{
+		$this->load->model('coursetimetable_model');
+		$this->coursetimetable_model->delete_timetable($ct_id);
+
+		redirect(base_url() . 'lecturer/view_time_tables');
 	}
         
 }
