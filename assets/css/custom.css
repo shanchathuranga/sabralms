@@ -95,3 +95,16 @@ p.error {
 .vert-menu span {
     cursor: pointer;
 }
+
+table {
+    border-collapse: collapse;
+}
+table, th, td {
+    border: 1px solid black;
+}
+td, th {
+    padding: 15px;
+}
+th {
+    font-weight: bold;
+}
