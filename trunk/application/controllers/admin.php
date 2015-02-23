@@ -191,4 +191,19 @@ class Admin extends CI_Controller {
 		
 		redirect(base_url() . 'admin/update_site_news');
 	}
+	
+	public function admin_form()
+	{
+		//$this->load->model('imagestore_model');
+		$data['main_content'] = "admin_register_form";
+		$this->load->view("layouts/main", $data);
+	}
+	
+	public function admin_register()
+	{
+		$this->load->model('user_model');
+		$this->user_model->insert_admin_user();
+		
+		redirect(base_url() . 'admin/admin_form');
+	}
 }
