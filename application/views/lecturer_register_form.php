@@ -10,7 +10,7 @@
 			<ul id="vert-submenu-2" class="vert-submenu">
 				<li><a href="<?php echo base_url(); ?>admin/student_form">Student Registration</a></li>
 				<li><a href="<?php echo base_url(); ?>admin/lecturer_form">Lecturer Registration</a></li>
-				<li><a href="<?php echo base_url(); ?>admin/">Admin Registration</a></li>
+				<li><a href="<?php echo base_url(); ?>admin/admin_form">Admin Registration</a></li>
 			</ul>
 			<li class="vert-menu-header"><span>System Maintenence</span></li>
 			<ul id="vert-submenu-3" class="vert-submenu">

@@ -61,7 +61,7 @@
 		<input type="hidden" name="user_id" value="<?php echo $user_info->user_id; ?>" />
 		<label>Username</label>
 		<br/>
-		<input type="text" name="username" value="<?php echo $user_info->username; ?>" disabled/>
+		<input type="text" name="username" value="<?php echo $user_info->username; ?>" />
 		<br/>
 		<label>Old Password</label>
 		<br/>

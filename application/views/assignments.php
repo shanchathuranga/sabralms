@@ -38,5 +38,30 @@
 	<?php } ?>
 </div>
 <div class="grid_9">
-	Assignments
+	<?php if ($usertype == 'LECTURER') { ?>
+	<form action="<?php echo base_url().'lecturer/upload_assignment'; ?>" method="post">
+		<label>Assignment Title</label>
+		<br/>
+		<input type="text" name="assignment_title" />
+		<br/>
+		<label>Topic</label>
+		<br/>
+		<select>
+			
+		</select>
+		<br/>
+		<label>Due Date</label>
+		<br/>
+		<input type="text" name="due_date" />
+		<br/>
+		<label>Assignment Description</label>
+		<br/>
+		<input type="file" name="userfile" size="20" />
+		<br/>
+		<br/>
+		<input type="submit" value="Add Assignment" />
+	</form>
+	<?php } else if ($usertype == 'STUDENT') { ?>
+	
+	<?php } ?>
 </div>

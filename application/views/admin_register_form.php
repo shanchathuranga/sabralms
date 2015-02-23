@@ -25,9 +25,31 @@
 	</div>
 </div>
 <div class="grid_9">
-	<h3>Latest Activites</h3>
-	<ul>
-		<li>21 New users registered in last week</li>
-		<li>2 New Courses added</li>
-	</ul>
+	<h2>Admin Registration Form</h2>
+	<form action="<?php echo base_url(); ?>admin/admin_register" method="post">
+		<label for="reg_no">Registration No:</label>
+		<br/>
+		<input type="text" name="reg_no" />
+		<br/>
+		<label for="first_name">First Name:</label>
+		<br/>
+		<input type="text" name="first_name" />
+		<br/>
+		<label for="last_name">Last Name:</label>
+		<br/>
+		<input type="text" name="last_name" />
+		<br/>
+		<label for="">E-mail:</label>
+		<br/>
+		<input type="text" name="email">
+		<br/>
+		<label for="display_name">Display Name:</label>
+		<br/>
+		<input type="text" name="display_name" />
+		<br/>
+		<br/>
+		<input type="submit" value="Register" />
+	</form>
 </div>
+
+
