@@ -56,4 +56,18 @@ class DegreeCourse_model extends CI_Model
 		$this->db->where('course_code', $this->input->post('selected_course'));
 		$this->db->update('degree_content', $data); 
 	}
+	
+	public function get_degree_contents_by_degree_by_year_by_semester($degree_code, $year, $semester)
+	{
+		$this->db->where('degree_code', $degree_code);
+		$this->db->where('year', $year);
+		$this->db->where('semester', $semester);
+		$result = $this->db->get('degree_content');
+		
+		if ( $result->num_rows() > 0 )
+		{
+			return $result->result();
+		}
+		return FALSE;
+	}
 }
